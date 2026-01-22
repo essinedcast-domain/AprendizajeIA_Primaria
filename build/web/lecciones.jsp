@@ -36,6 +36,13 @@
         }
     }
 %>
+<%
+    boolean guardadoLeccion = false;
+
+    if (request.getParameter("nombre_leccion") != null) {
+        guardadoLeccion = true;
+    }
+%>
 
 <!DOCTYPE html>
 <html>
@@ -58,6 +65,11 @@
 <div class="container mt-4">
 
     <h3 class="mb-4">Gestión de Lecciones</h3>
+    <% if (guardadoLeccion) { %>
+    <div class="alert alert-success">
+        Lección guardada correctamente.
+    </div>
+    <% } %>
 
     <!-- FORMULARIO -->
     <div class="card mb-4">

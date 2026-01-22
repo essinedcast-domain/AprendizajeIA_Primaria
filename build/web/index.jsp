@@ -32,8 +32,11 @@
                             Sistema de Aprendizaje en IA
                         </h4>
 
-                        <!-- LOGO (opcional) -->
+                        <!-- LOGO -->
+                        <div class="text-center">
                         <img src="img/Logotipo infantil pa-original.png" class="img-fluid mb-3" width="200">
+                        </div>
+
 
                         <form>
 

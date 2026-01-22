@@ -18,11 +18,20 @@
         PreparedStatement ps = con.prepareStatement(
             "INSERT INTO alumno(nombre, grupo) VALUES (?, ?)"
         );
+        
         ps.setString(1, nombre);
         ps.setString(2, grupo);
         ps.executeUpdate();
     }
 %>
+<%
+    boolean guardado = false;
+
+    if (request.getParameter("nombre") != null) {
+        guardado = true;
+    }
+%>
+
 <html>
 <head>
     <title>Gestión de Alumnos</title>
@@ -43,6 +52,11 @@
 <div class="container mt-4">
 
     <h3 class="mb-4">Gestión de Alumnos</h3>
+    <% if (guardado) { %>
+    <div class="alert alert-success">
+        Alumno guardado correctamente.
+    </div>
+    <% } %>
 
     <!-- FORMULARIO -->
     <div class="card mb-4">

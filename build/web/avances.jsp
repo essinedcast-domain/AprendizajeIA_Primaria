@@ -37,6 +37,13 @@
         }
     }
 %>
+<%
+    boolean avanceGuardado = false;
+
+    if (request.getParameter("id_alumno") != null) {
+        avanceGuardado = true;
+    }
+%>
 
 <!DOCTYPE html>
 <html>
@@ -59,6 +66,11 @@
 <div class="container mt-4">
 
     <h3 class="mb-4">Registro de Avances</h3>
+<% if (avanceGuardado) { %>
+    <div class="alert alert-success">
+        Avance registrado correctamente.
+    </div>
+<% } %>
 
     <!-- FORMULARIO -->
     <div class="card mb-4">
